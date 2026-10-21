@@ -1,7 +1,8 @@
 import { Tabs, useRouter } from "expo-router";
-import { Home, Compass, Droplets, LayoutGrid, User } from "lucide-react-native";
+import { Home, Compass, Droplets, LayoutGrid, User, Bell } from "lucide-react-native";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import { NotificationBadge } from "../../components/NotificationBadge";
 import { useNetwork } from "../../hooks/useNetwork";
 import { useWallet } from "../../hooks/useWallet";
 import { useTheme } from "../../theme/useTheme";
@@ -123,6 +124,15 @@ export default function TabsLayout() {
           title: "Mini Apps",
           tabBarLabel: "Mini Apps",
           tabBarIcon: ({ color, size }) => <LayoutGrid color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="notifications"
+        options={{
+          title: "Notifications",
+          tabBarLabel: "Notifications",
+          tabBarIcon: ({ color, size }) => <Bell color={color} size={size} />,
+          tabBarBadge: () => <NotificationBadge />,
         }}
       />
       <Tabs.Screen
