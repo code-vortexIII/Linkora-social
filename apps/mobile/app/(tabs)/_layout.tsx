@@ -1,5 +1,5 @@
 import { Tabs, useRouter } from "expo-router";
-import { Home, Compass, Droplets, LayoutGrid, User, Bell } from "lucide-react-native";
+import { Home, Compass, Droplets, LayoutGrid, User, Bell, Search } from "lucide-react-native";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { NotificationBadge } from "../../components/NotificationBadge";
@@ -108,6 +108,15 @@ export default function TabsLayout() {
           title: "Explore",
           tabBarLabel: "Explore",
           tabBarIcon: ({ color, size }) => <Compass color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: "Search",
+          tabBarLabel: "Search",
+          tabBarAccessibilityLabel: "Search",
+          tabBarIcon: ({ color, size }) => <Search color={color} size={size} />,
         }}
       />
       <Tabs.Screen
